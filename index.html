@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Dicee</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster" rel="stylesheet">
+
+  </head>
+  <body>
+
+    <div class="container">
+      
+      <h1 class="winner">Refresh Me</h1>
+
+      <div class="dice">
+        <p>Player 1</p>
+        <img class="img1" src="./images/dice6.png">
+      </div>
+
+      <div class="dice">
+        <p>Player 2</p>
+        <img class="img2" src="./images/dice6.png">
+      </div>
+      
+    </div>
+
+
+  </body>
+
+  <footer>
+    <strong>2k1amankumar@gmail.com</strong>
+  </footer>
+  <script>
+    var image1 = document.querySelector(".img1");
+    var image2 = document.querySelector(".img2");
+    var rand1 = Math.floor(Math.random() * 6)+1;
+    var rand2 = Math.floor(Math.random() * 6)+1;
+    var src1 = "./images/dice"+rand1+".png";
+    var src2 = "./images/dice"+rand2+".png";
+    image1.setAttribute("src",src1);
+    image2.setAttribute("src",src2);
+    if(rand1>rand2){
+      var win = document.querySelector(".winner");
+      win.textContent = "Player 1 won";
+    }
+    else if(rand1<rand2){
+      var win = document.querySelector(".winner");
+      win.textContent = "Player 2 won";
+    }
+    else{
+      var win = document.querySelector(".winner");
+      win.textContent = "Tied";
+    }
+  </script>
+</html>
